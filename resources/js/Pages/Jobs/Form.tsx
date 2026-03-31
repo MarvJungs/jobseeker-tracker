@@ -3,7 +3,7 @@ import InputError from "@/Components/InputError";
 import InputLabel from "@/Components/InputLabel";
 import SelectInput from "@/Components/SelectInput";
 import TextInput from "@/Components/TextInput";
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import Layout from '@/Layouts/Layout';
 import { Form, useForm, usePage } from "@inertiajs/react";
 
 export default function JobForm({ job, priorities, statuses }: { job?: Job, priorities: JobPriority[], statuses: JobStatus[] }) {
@@ -30,7 +30,7 @@ export default function JobForm({ job, priorities, statuses }: { job?: Job, prio
     const { errors } = usePage().props;
 
     return (
-        <AuthenticatedLayout header="Dashboard">
+        <Layout>
             <h1>{job === undefined ? "Create" : "Edit"} Job</h1>
             <Form method="post">
                 <div className="row mb-3">
@@ -145,6 +145,6 @@ export default function JobForm({ job, priorities, statuses }: { job?: Job, prio
                 </div>
                 <button className="btn btn-primary" type="submit">Submit</button>
             </Form>
-        </AuthenticatedLayout>
+        </Layout>
     )
 }

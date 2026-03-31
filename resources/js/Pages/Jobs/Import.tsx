@@ -1,6 +1,7 @@
 import InputLabel from "@/Components/InputLabel";
 import TextInput from "@/Components/TextInput";
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import Layout from '@/Layouts/Layout';
+import { Head } from "@inertiajs/react";
 import axios from "axios";
 import { ChangeEvent, FormEvent, useState } from "react";
 
@@ -32,7 +33,8 @@ export default function Import() {
         }
     }
     return (
-        <AuthenticatedLayout header="Dashboard">
+        <Layout>
+            <Head title="Import" />
             <form onSubmit={onSubmit}>
                 <div className="row mb-3">
                     <div className="col">
@@ -42,6 +44,6 @@ export default function Import() {
                 </div>
                 <button className="btn btn-primary" type="submit">Import Jobs!</button>
             </form>
-        </AuthenticatedLayout>
+        </Layout>
     );
 }

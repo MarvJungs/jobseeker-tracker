@@ -1,4 +1,4 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import Layout from '@/Layouts/Layout';
 import { Head } from '@inertiajs/react';
 import { LineChart } from '@mui/x-charts/LineChart';
 import { PieChart } from '@mui/x-charts/PieChart';
@@ -19,7 +19,7 @@ export default function Dashboard({status, jobs}: {status: JobStatusPieData[], j
         }));
         
     return (
-        <AuthenticatedLayout header="Dashboard">
+        <Layout>
             <Head title="Dashboard" />
             <h1>Dashboard</h1>
             <div className='row'>
@@ -48,6 +48,6 @@ export default function Dashboard({status, jobs}: {status: JobStatusPieData[], j
                 </div>
             </div>
 
-        </AuthenticatedLayout>
+        </Layout>
     );
 }
