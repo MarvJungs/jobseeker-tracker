@@ -26,7 +26,7 @@ export default function JobsTable({jobs}: {jobs: Job[]}) {
             <tbody>
                 {jobs.map((job) => (
                     <tr key={job.id}>
-                        <td><a href={job.jobtitlelink}>{job.jobtitle}</a></td>
+                        <td><a href={job.jobtitlelink} target="_blank">{job.jobtitle}</a></td>
                         <td>{job.company}</td>
                         <td>{job.status.name}</td>
                         <td>{job.priority.value} - {job.priority.name}</td>
