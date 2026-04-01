@@ -69,6 +69,12 @@ class JobapplicationController extends Controller
         return redirect(route('dashboard'));
     }
 
+    public function destroy(Jobapplication $job)
+    {
+        $job->delete();
+        return redirect(route('jobs'));
+    }
+
     public function import()
     {
         return Inertia::render('Jobs/Import');

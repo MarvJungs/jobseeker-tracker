@@ -1,3 +1,5 @@
+import { Link } from "@inertiajs/react";
+
 export default function JobsTable({jobs}: {jobs: Job[]}) {
     return (
         <table className='table table-bordered table-hover text-nowrap'>
@@ -43,8 +45,9 @@ export default function JobsTable({jobs}: {jobs: Job[]}) {
                         <td>{job.heard_about}</td>
                         <td>{job.rating}</td>
                         <td>{job.notes}</td>
-                        <td>
-                            <a href={route('job.edit', {job: job})}>Edit</a>
+                        <td className="d-flex gap-2">
+                            <Link href={route('job.edit', {job: job})} as={'button'} className="btn btn-secondary">Edit</Link>
+                            <Link href={route('job.destroy', {job: job})} method="delete" as={'button'} className="btn btn-danger">Delete</Link>
                         </td>
                     </tr>
                 ))}

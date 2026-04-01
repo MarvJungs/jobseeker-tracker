@@ -16,8 +16,9 @@ Route::middleware('auth')->group(
                 Route::get('/jobs/{job}/edit', [JobapplicationController::class, 'edit'])->name('job.edit');
                 Route::get('/jobs/import', [JobapplicationController::class, 'import'])->name('jobs.import');
                 Route::post('/jobs/import', [JobapplicationController::class, 'addJobsFromImport'])->name('jobs.addFromImport');
-                Route::post('/jobs/create', [JobapplicationController::class, 'store'])->name('job-store');
+                Route::post('/jobs/create', [JobapplicationController::class, 'store'])->name('job.store');
                 Route::post('/jobs/{job}/edit', [JobapplicationController::class, 'update'])->name('job.update');
+                Route::delete('/jobs/{job}/delete', [JobapplicationController::class, 'destroy'])->name('job.destroy');
             }
         );
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
