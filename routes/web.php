@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\JobapplicationController;
 use App\Http\Controllers\ProfileController;
-use App\Models\Jobapplication;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [JobapplicationController::class, 'welcome']);
