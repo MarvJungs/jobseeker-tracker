@@ -6,6 +6,7 @@ use App\Http\Requests\StoreJobApplicationRequest;
 use App\Models\Jobapplication;
 use App\Models\Priority;
 use App\Models\Status;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Application;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
