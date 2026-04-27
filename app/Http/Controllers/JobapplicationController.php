@@ -37,9 +37,9 @@ class JobapplicationController extends Controller
         return Inertia::render('Dashboard', compact('jobs', 'status'));
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $jobs = Jobapplication::with(['priority', 'status'])->get();
+        $jobs = $request->user()->jobapplications->load('priority', 'status');
         return Inertia::render('Jobs/Index', compact('jobs'));
     }
 
