@@ -52,7 +52,7 @@ class JobapplicationController extends Controller
 
     public function store(StoreJobApplicationRequest $request)
     {
-        Jobapplication::create($request->validated());
+        $request->user()->jobapplications()->create($request->validated());
         return redirect(route('dashboard'));
     }
 
